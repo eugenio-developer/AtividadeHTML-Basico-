@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro curso inglês</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0c0ce94d;
+        }
+
+        .container {
+            width: 80%;
+            height: 80%;
+            display: flex;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
+        }
+
+        .form-image {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 182, 182, 0.43);
+            padding: 1rem;
+        }
+
+        .form {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #FFF;
+            padding: 3rem;
+        }
+
+        .form-header {
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: left;
+        }
+
+        .form-header h1::after {
+            content: '';
+            display: block;
+            width: 13rem;
+            height: 0.4rem;
+            background-color: #6C63FF;
+            margin: 0 auto;
+            position: absolute;
+            border-radius: 10px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .input-box {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.1rem;
+        }
+
+        .input-box input {
+            margin: 0.6rem 0;
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 1px 1px 6px #0000001c;
+        }
+
+        .input-box input:hover {
+            background-color: #eeeeee75;
+        }
+
+        .input-box input:focus-visible {
+            outline: 1px solid;
+        }
+
+        .input-box input::placeholder {
+            color: #000000be;
+        }
+
+        .gender-group {
+            margin-top: 0.62rem;
+            padding: 0 0 .5rem;
+
+        }
+
+        .gender-input {
+            display: flex;
+            align-items: center;
+        }
+
+        .gender-input input {
+            margin-right: 0.35rem;
+        }
+
+        .gender-input label {
+            font-size: 0.81rem;
+            font-weight: 600;
+            color: #000000c0;
+        }
+
+        .level-group {
+            margin-top: 0.62rem;
+            padding: 0 0 .5rem;
+
+        }
+
+        .level-input {
+            display: flex;
+            align-items: center;
+        }
+
+        .level-input input {
+            margin-right: 0.35rem;
+        }
+
+        .level-input label {
+            font-size: 0.81rem;
+            font-weight: 600;
+            color: #000000c0;
+        }
+
+        #check-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 1rem 0;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        #description {
+
+            width: 27rem;
+            height: 5rem;
+            margin: 0.6rem 0;
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 1px 1px 6px #0000001c;
+        }
+
+        .continue-button button {
+            width: 100%;
+            margin-top: 2.5rem;
+            border: none;
+            padding: 0.6rem;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #6C63FF;
+        }
+
+        .continue-button button:hover {
+            background-color: #6b63fff1;
+        }
+
+        .continue-button button a {
+            text-decoration: none;
+            font-size: 0.93rem;
+            font-weight: 500;
+            color: #FFF;
+        }
+
+        @media screen and (max-width: 1330px) {
+            .form-image {
+                display: none;
+            }
+
+            .container {
+                width: 50%;
+            }
+
+            .form {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 1064px) {
+            .container{
+                width: 90%;
+                height: auto;
+            }
+            .input-group{
+                flex-direction: column;
+                overflow-y: scroll;
+                flex-wrap: nowrap;
+                padding-right: 5rem;
+            }
+            .gender-input{
+                margin-top: 2rem
+            }
+            .level-input{
+                margin-top: 2rem;
+            }
+            .gender-group{
+                flex-direction: column;
+
+            }
+            .level-group{
+                flex-direction: column;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-image">
+            <img src="formulario.png" alt="">
+        </div>
+        <div class="form">
+            <form action="#">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="firstname">Primeiro Nome</label>
+                        <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome"
+                            required>
+                    </div>
+                    <div class="input-box">
+                        <label for="lastname">Sobrenome</label>
+                        <input id="lasttname" type="text" name="lastname" placeholder="Digite seu sobrenome" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu email" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="date">Data Nascimento</label>
+                        <input id="date" type="date" name="date" placeholder="Digite sua data de nascimento" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="description">Descrição</label>
+                        <textarea id="description" type="" name="description"
+                            placeholder="Digite uma breve descrição sobre seus interesses" required cols="30"
+                            rows="10"></textarea>
+                    </div>
+                </div>
+
+                <div id="check-box">
+                    <div class="gender-inputs">
+                        <div class="gender-title">
+                            <h6>Gênero</h6>
+                        </div>
+                        <div class="gender-groups">
+                            <div class="gender-input">
+                                <input type="radio" id="female" name="gender">
+                                <label for="female">Feminino</label>
+                            </div>
+                            <div class="gender-input">
+                                <input type="radio" id="male" name="gender">
+                                <label for="male">Masculino</label>
+                            </div>
+                            <div class="gender-input">
+                                <input type="radio" id="others" name="gender">
+                                <label for="others">Outros</label>
+                            </div>
+                            <div class="gender-input">
+                                <input type="radio" id="none" name="gender">
+                                <label for="none">Prefiro não dizer</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="level-inputs">
+                        <div class="level-title">
+                            <h6>Nivel de Inglês</h6>
+                        </div>
+                        <div class="level-groups">
+                            <div class="level-input">
+                                <input type="radio" id="beginner" name="level">
+                                <label for="beginner">Iniciante</label>
+                            </div>
+                            <div class="level-input">
+                                <input type="radio" id="intermediary" name="level">
+                                <label for="intermediary">Intermediário</label>
+                            </div>
+                            <div class="level-input">
+                                <input type="radio" id="advanced" name="level">
+                                <label for="advanced">Avançado</label>
+                            </div>
+                            <div class="level-input">
+                                <input type="radio" id="fluent" name="level">
+                                <label for="fluent">Fluente</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="continue-button">
+                    <button>
+                        <a href="#">Continuar</a>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
